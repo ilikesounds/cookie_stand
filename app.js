@@ -5,6 +5,12 @@ var pikePlace = {
   randCust: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
+  render: function() {
+    var liEl = document.createElement('li');
+    var ulEl = document.createElement('ul');
+    liEl.textContent = this.minCust;
+    liEl.textContent =
+  }
 }
 
 var seaTac = {
