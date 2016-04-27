@@ -1,3 +1,11 @@
+var elId = [
+  document.getElementById('pike'),
+  document.getElementById('seaTac'),
+  document.getElementById('souCen'),
+  document.getElementById('belVue'),
+  document.getElementById('alki')
+];
+
 var hoursOpen = [
   '10:00a',
   '11:00a',
@@ -11,182 +19,195 @@ var hoursOpen = [
 ];
 
 var stores = [
-  'pikeP',
-  'seaT',
-  'Sout',
-  'bell',
-  'alk'
+  pike,
+  // sea,
+  // south,
+  // bell,
+  // alki
 ];
 
 var pike = {
   name: 'Pike Place',
-  minCust: '17',
-  maxCust: '18',
-  avgSale: '5.2',
-  avgCook: 0,
+  minCust: 17,
+  maxCust: 88,
+  avgSale: 5.2,
   hrTotal: [],
+  dayTotal: 0,
+  id: elId[0],
 
   randCust: function(min, max) {
     return Math.random() * (max - min + 1) + min;
   },
 
-  genHr: function() {
-
+  genHr: function(cookieHr, total, avg, rand, hours) {
+    for (var i = 0; i < hours.length; i++) {
+      var hrCook = Math.floor(rand * avg);
+      console.log(hrCook);
+      total.push(hrCook);
+      this.hrCook.push += this.total;
+      console.log(hrCook, this.hrTotal);
+    };
   },
 
-  render: function() {
-    this.genHr();
+  render: function(element) {
+    this.genHr(this.hrTotal, this.dayTotal, this.avgSale, this.randCust(
+      this.minCust, this.maxCust), hoursOpen);
 
     var ulEl = document.createElement('ul');
     ulEl.appendChild(document.createTextNode(this.name));
-    var sectionEl = document.getElementById('store_data').appendChild(ulEl);
+    var secEl = element.appendChild(ulEl);
 
     for (var i = 0; i < hoursOpen.length; i++) {
       var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + ": " + this.hrTotal[i];
+      liEl.textContent = hoursOpen[i] + ": " + this.hrTotal[i];
       ulEl.appendChild(liEl);
     };
-  };
 
+    var totEl = document.createElement('li');
+    totEl.textContent = 'Total: ' + this.hrTotal;
+    ulEl.appendChild(totEl);
+  }
 };
 
-var sea = {
-  name: 'SeaTac',
-  minCust: '6',
-  maxCust: '24',
-  avgSale: '1.2',
-  avgCook: 0,
-  hrTotal: [],
+pike.render(elId[0]);
 
-  randCust: function(min, max) {
-    return Math.random() * (max - min + 1) + min;
-  },
-
-  genHr: function() {
-
-  },
-
-  render: function() {
-    this.genHr();
-
-    var ulEl = document.createElement('ul');
-    ulEl.appendChild(document.createTextNode(this.name));
-    var sectionEl = document.getElementById('store_data').appendChild(ulEl);
-
-    for (var i = 0; i < hoursOpen.length; i++) {
-      var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + ": " + this.hrTotal[i];
-      ulEl.appendChild(liEl);
-    };
-  };
-};
-
-var south = {
-  name: 'Southcenter',
-  minCust: '11',
-  maxCust: '38',
-  avgSale: '1.9',
-  avgCook: 0,
-  hrTotal: [],
-
-  randCust: function(min, max) {
-    return Math.random() * (max - min + 1) + min;
-  },
-
-  genHr: function() {
-
-  },
-
-  render: function() {
-    this.genHr();
-
-    var ulEl = document.createElement('ul');
-    ulEl.appendChild(document.createTextNode(this.name));
-    var sectionEl = document.getElementById('store_data').appendChild(ulEl);
-
-    for (var i = 0; i < hoursOpen.length; i++) {
-      var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + ": " + this.hrTotal[i];
-      ulEl.appendChild(liEl);
-    };
-  };
-};
-
-var bell = {
-  name: 'Bellevue',
-  minCust: '20',
-  maxCust: '48',
-  avgSale: '3.3',
-  avgCook: 0,
-  hrTotal: [],
-
-  randCust: function(min, max) {
-    return Math.random() * (max - min + 1) + min;
-  },
-
-  genHr: function() {
-
-  },
-
-  render: function() {
-    this.genHr();
-
-    var ulEl = document.createElement('ul');
-    ulEl.appendChild(document.createTextNode(this.name));
-    var sectionEl = document.getElementById('store_data').appendChild(ulEl);
-
-    for (var i = 0; i < hoursOpen.length; i++) {
-      var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + ": " + this.hrTotal[i];
-      ulEl.appendChild(liEl);
-    };
-  };
-};
-
-var alki = {
-  name: 'Alki',
-  minCust: '3',
-  maxCust: '24',
-  avgSale: '2.6',
-  avgCook: 0,
-  hrTotal: [],
-
-  randCust: function(min, max) {
-    return Math.random() * (max - min + 1) + min;
-  },
-
-  genHr: function() {
-
-  },
-
-  render: function() {
-    this.genHr();
-
-    var ulEl = document.createElement('ul');
-    ulEl.appendChild(document.createTextNode(this.name));
-    var sectionEl = document.getElementById('store_data').appendChild(ulEl);
-
-    for (var i = 0; i < hoursOpen.length; i++) {
-      var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + ": " + this.hrTotal[i];
-      ulEl.appendChild(liEl);
-    };
-  };
-};
-
-
-// stores.render = function() {
-//   var kV = Object.keys(this);
-//   var newUl = document.createElement('ul');
-//   for (var i = 0; i < kV.length; i++) {
-//     var newLi = document.createElement('li');
-//     newUl.appendChild(newLi);
-//     var newText = document.createTextNode(kV[i]);
-//   }
-// }
+// var sea = {
+//   name: 'SeaTac',
+//   minCust: 6,
+//   maxCust: 24,
+//   avgSale: 1.2,
+//   hrTotal: [],
+//   total: 0,
 //
-// for (store in stores) {
-//   stores.render();
-// }
+//   randCust: function(min, max) {
+//     return Math.random() * (max - min + 1) + min;
+//   },
 //
-// stores.render();
+//   genHr: function() {
+//
+//   },
+//
+//   render: function() {
+//     this.genHr();
+//
+//     var ulEl = document.createElement('ul');
+//     ulEl.appendChild(document.createTextNode(this.name));
+//     var sectionEl = document.getElementById('store_data').appendChild(ulEl);
+//
+//     for (var i = 0; i < hoursOpen.length; i++) {
+//       var liEl = document.createElement('li');
+//       liEl.textContent = hours[i] + ": " + this.hrTotal[i];
+//       ulEl.appendChild(liEl);
+//     };
+//   };
+// };
+//
+// var south = {
+//   name: 'Southcenter',
+//   minCust: '11',
+//   maxCust: '38',
+//   avgSale: '1.9',
+//   hrTotal: [],
+//   total: 0,
+//
+//   randCust: function(min, max) {
+//     return Math.random() * (max - min + 1) + min;
+//   },
+//
+//   genHr: function() {
+//
+//   },
+//
+//   render: function() {
+//     this.genHr();
+//
+//     var ulEl = document.createElement('ul');
+//     ulEl.appendChild(document.createTextNode(this.name));
+//     var sectionEl = document.getElementById('store_data').appendChild(ulEl);
+//
+//     for (var i = 0; i < hoursOpen.length; i++) {
+//       var liEl = document.createElement('li');
+//       liEl.textContent = hours[i] + ": " + this.hrTotal[i];
+//       ulEl.appendChild(liEl);
+//     };
+//   };
+// };
+//
+// var bell = {
+//   name: 'Bellevue',
+//   minCust: '20',
+//   maxCust: '48',
+//   avgSale: '3.3',
+//   hrTotal: [],
+//   total: 0,
+//
+//   randCust: function(min, max) {
+//     return Math.random() * (max - min + 1) + min;
+//   },
+//
+//   genHr: function() {
+//
+//   },
+//
+//   render: function() {
+//     this.genHr();
+//
+//     var ulEl = document.createElement('ul');
+//     ulEl.appendChild(document.createTextNode(this.name));
+//     var sectionEl = document.getElementById('store_data').appendChild(ulEl);
+//
+//     for (var i = 0; i < hoursOpen.length; i++) {
+//       var liEl = document.createElement('li');
+//       liEl.textContent = hours[i] + ": " + this.hrTotal[i];
+//       ulEl.appendChild(liEl);
+//     };
+//   };
+// };
+//
+// var alki = {
+//   name: 'Alki',
+//   minCust: '3',
+//   maxCust: '24',
+//   avgSale: '2.6',
+//   hrTotal: [],
+//   total: 0,
+//
+//   randCust: function(min, max) {
+//     return Math.random() * (max - min + 1) + min;
+//   },
+//
+//   genHr: function() {
+//
+//   },
+//
+//   render: function() {
+//     this.genHr();
+//
+//     var ulEl = document.createElement('ul');
+//     ulEl.appendChild(document.createTextNode(this.name));
+//     var sectionEl = document.getElementById('store_data').appendChild(ulEl);
+//
+//     for (var i = 0; i < hoursOpen.length; i++) {
+//       var liEl = document.createElement('li');
+//       liEl.textContent = hours[i] + ": " + this.hrTotal[i];
+//       ulEl.appendChild(liEl);
+//     };
+//   };
+// };
+//
+//
+// // stores.render = function() {
+// //   var kV = Object.keys(this);
+// //   var newUl = document.createElement('ul');
+// //   for (var i = 0; i < kV.length; i++) {
+// //     var newLi = document.createElement('li');
+// //     newUl.appendChild(newLi);
+// //     var newText = document.createTextNode(kV[i]);
+// //   }
+// // }
+// //
+// // for (store in stores) {
+// //   stores.render();
+// // }
+// //
+// // stores.render();
