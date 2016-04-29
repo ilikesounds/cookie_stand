@@ -37,39 +37,38 @@ var pike = {
 
   randCust: function(min, max) {
     return Math.random() * (max - min + 1) + min;
+    // console.log(this.randomCustomer);
   },
 
-  genHr: function(cookieHr, total, avg, rand, hours) {
-    for (var i = 0; i < hours.length; i++) {
-      var hrCook = Math.floor(rand * avg);
-      console.log(hrCook);
-      total.push(hrCook);
-      this.hrCook.push += this.total;
-      console.log(hrCook, this.hrTotal);
-    };
-  },
-
-  render: function(element) {
-    this.genHr(this.hrTotal, this.dayTotal, this.avgSale, this.randCust(
-      this.minCust, this.maxCust), hoursOpen);
-
-    var ulEl = document.createElement('ul');
-    ulEl.appendChild(document.createTextNode(this.name));
-    var secEl = element.appendChild(ulEl);
-
+  genHr: function() {
     for (var i = 0; i < hoursOpen.length; i++) {
-      var liEl = document.createElement('li');
-      liEl.textContent = hoursOpen[i] + ": " + this.hrTotal[i];
-      ulEl.appendChild(liEl);
+      var cookiesAnHour = Math.floor(pike.randCust(pike.maxCust - pike.minCust) *
+        pike.avgSale);
+      pike.hrTotal += cookiesAnHour;
+      pike.dayTotal += cookiesAnHour;
     };
-
-    var totEl = document.createElement('li');
-    totEl.textContent = 'Total: ' + this.hrTotal;
-    ulEl.appendChild(totEl);
-  }
+  },
 };
 
-pike.render(elId[0]);
+//   render: function(element) {
+//     this.genHr(this.hrTotal, this.dayTotal, this.avgSale, this.randCust(this.maxCust - this.minCust), hoursOpen);
+//     var ulEl = document.createElement('ul');
+//     ulEl.appendChild(document.createTextNode(this.name));
+//     var secEl = element.appendChild(ulEl);
+//
+//     for (var i = 0; i < hoursOpen.length; i++) {
+//       var liEl = document.createElement('li');
+//       liEl.textContent = hoursOpen[i] + ': ' + this.hrTotal[i];
+//       ulEl.appendChild(liEl);
+//     };
+//
+//     var totEl = document.createElement('li');
+//     totEl.textContent = 'Total: ' + this.hrTotal;
+//     ulEl.appendChild(totEl);
+//   }
+// };
+//
+// pike.render(elId[0]);
 
 // var sea = {
 //   name: 'SeaTac',
