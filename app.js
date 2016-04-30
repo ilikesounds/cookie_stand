@@ -9,14 +9,6 @@ var hoursOpen = [
   '05:00 pm: '
 ];
 
-var storeName = [
-  'pikePl',
-  'seaTac',
-  'souCen',
-  'bellVu',
-  'alkiBe'
-];
-
 function Store(name, minCust, maxCust, avgCookie, sectionId) {
   this.name = name;
   this.minCust = minCust;
@@ -65,3 +57,15 @@ var sea = new Store('SeaTac Store', 6, 24, 1.2, 'seaTac');
 var sou = new Store('Southcenter Store', 11, 38, 1.9, 'souCen');
 var bell = new Store('Bellevue Square Store', 20, 48, 3.3, 'belVue');
 var alki = new Store('Alki Store', 3, 24, 2.6, 'alki');
+
+var storeName = [
+  pike,
+  sea,
+  sou,
+  bell,
+  alki
+];
+
+for (var c = 0; c < storeName.length; c++) {
+  storeName[c].render(storeName[c].sectionId);
+};
