@@ -19,14 +19,14 @@ function Store(name, minCust, maxCust, avgCookie, sectionId) {
   this.sectionId = sectionId;
 };
 
-Store.prototype.randCust = function (min, max) {
+Store.prototype.randCust = function(min, max) {
   console.log(min, max);
   return Math.random() * (max - min) + min;
 };
 
-Store.prototype.hourTotal = function (hTotal, dTotal, avg, rand) {
+Store.prototype.hourTotal = function(hTotal, dTotal, avg, rand) {
   console.log(rand);
-  for(var j = 0; j < hoursOpen.length; j++) {
+  for (var j = 0; j < hoursOpen.length; j++) {
     var ran = Math.floor(rand(this.minCust, this.maxCust) * avg);
     hTotal.push(ran);
     dTotal += ran;
@@ -34,9 +34,10 @@ Store.prototype.hourTotal = function (hTotal, dTotal, avg, rand) {
   return dTotal;
 };
 
-Store.prototype.render = function (sectId) {
+Store.prototype.render = function(sectId) {
   console.log(this.hrTotal);
-  this.dayTotal = this.hourTotal(this.hrTotal, this.dayTotal, this.avgCookie, this.randCust);
+  this.dayTotal = this.hourTotal(this.hrTotal, this.dayTotal, this.avgCookie,
+    this.randCust);
   var pEl = document.getElementById(sectId);
   var ulEl = document.createElement('ul');
 
@@ -47,7 +48,7 @@ Store.prototype.render = function (sectId) {
     ulEl.appendChild(liEl);
   }
   var liMent = document.createElement('li');
-  liMent.textContent = 'TOTALS ' + this.dayTotal;
+  liMent.textContent = 'Totals: ' + this.dayTotal;
   ulEl.appendChild(liMent);
   pEl.appendChild(ulEl);
 };
