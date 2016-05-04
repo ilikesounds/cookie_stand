@@ -1,0 +1,133 @@
+/*Rules for the logo section*/
+
+/*Rules for the typography section*/
+#highlights{
+  background-color: #00796B;
+  margin: 5px;
+  width: 100%;
+}
+
+#highL {
+  font-family: 'Rouge Script', cursive;
+  font-size: 64px;
+  font-weight: normal;
+  color: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+}
+
+#high1, #high2, #high3, #high4, #high5 {
+  marign: auto;
+  padding: 5px;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+#bodyText {
+  background-color: #009688;
+  margin: 5px;
+  width: 100%;
+}
+
+#bodyT {
+  font-family: 'Georgia', serif;
+  font-size: 64px;
+  font-weight: normal;
+  color: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+}
+
+#body1, #body2, #body3, #body4, #body5 {
+  font-family: 'Georgia', serif;
+  marign: auto;
+  padding: 5px;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+#dataText {
+  background-color: #B2DFDB;
+  margin: 5px;
+  width: 100%;
+}
+
+#dataT {
+  font-family: 'Tahoma', sans;
+  font-size: 64px;
+  font-weight: normal;
+  color: #212121;
+  margin: 0px;
+  padding: 0px;
+}
+
+#data1, #data2, #data3, #data4, #data5 {
+  font-family: 'Tahoma', sans;
+  marign: auto;
+  padding: 5px;
+  font-size: 16px;
+  color: #212121;
+}
+
+/*Rules for color pallete section*/
+/*#colors {
+  display: block;
+  width: 100%;
+  height: 50px;
+}*/
+
+#colors > * {
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 50px;
+  margin: 10px;
+}
+
+.darkPrimary {
+  background-color: #00796B;
+  color: #ffffff;
+  font-size: 32px;
+  vertical-align: bottom;
+  margin: 5px;
+}
+
+.primary {
+  background-color: #009688;
+  color: #ffffff;
+  font-size: 32px;
+  vertical-align: bottom;
+  margin: 5px;
+}
+
+.lightPrimary {
+  background-color: #B2DFDB;
+  color: #212121;
+  font-size: 32px;
+  vertical-align: bottom;
+  margin: 5px;
+}
+
+.lightText {
+  background-color: #FFFFFF;
+  color: #212121;
+  font-size: 32px;
+  vertical-align: bottom;
+  margin: 5px;
+}
+
+.accent {
+  background-color: #FF5722;
+  color: #ffffff;
+  font-size: 32px;
+  vertical-align: bottom;
+  margin: 5px;
+}
+
+.primaryText {
+  background-color: #212121;
+  color: #ffffff;
+  font-size: 32px;
+  vertical-align: bottom;
+  margin: 5px;
+}
