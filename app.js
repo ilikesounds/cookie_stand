@@ -18,8 +18,21 @@ function Store(name, minCust, maxCust, avgCookie, sectionId) {
   this.avgCookie = avgCookie;
   this.hrTotal = [];
   this.dayTotal = 0;
-  this.sectionId = sectionId;
 };
+
+var pike = new Store('Pike Place Store', 17, 88, 5.2, 'pike');
+var sea = new Store('SeaTac Store', 6, 24, 1.2, 'seaTac');
+var sou = new Store('Southcenter Store', 11, 38, 1.9, 'souCen');
+var bell = new Store('Bellevue Square Store', 20, 48, 3.3, 'belVue');
+var alki = new Store('Alki Store', 3, 24, 2.6, 'alki');
+
+var storeName = [
+  pike,
+  sea,
+  sou,
+  bell,
+  alki
+];
 
 Store.prototype.randCust = function(min, max) {
   console.log(min, max);
@@ -47,14 +60,25 @@ Store.prototype.hourTotal = function(hTotal, dTotal, avg, rand) {
 // How can I DRY this out using a for loop to automate column creation based on the first 4 indicies of the store object
 function renderTH() {
   var tHeader = document.createElement('thead');
+  var tHR1 = document.createElement('tr');
+  var tHR2 = document.createElement('tr');
+  var etd1 = document.createElement('td');
+  var etd2 = document.createElement('td');
+  tHeader.id = 'tableHeader';
+  tHR1.id = 'storeNameRow';
+  tHR2.id = 'storeStatsRow';
+  etd1.className = 'emptyTableData';
+  etd2.className = 'emptyTableData';
+  tHR1.appendChild(etd1);
+  tHR2.appendChild(etd2);
+  tHeader.appendChild(tHR1);
+  tHeader.appendChild(tHR2);
+  sD.appendChild(tHeader);
+};
+
+function renderTB() {
   var tBody = document.createElement('tbody');
   tBody.id = 'tableBody';
-  var tHeaderRow = document.createElement('th');
-  var tHD1 = document.createElement('td');
-  var tHD2 = document.createElement('td');
-  var tHD3 = document.createElement('td');
-  var tHD4 = document.createElement('td');
-  var tHD5 = document.createElement('td');
   tHD1.textContent = '';
   tHD2.textContent = 'Store Name';
   tHD3.textContent = 'Min. Cust./Hr.';
@@ -66,8 +90,6 @@ function renderTH() {
   tHeaderRow.appendChild(tHD4);
   tHeaderRow.appendChild(tHD5);
   tHeaderRow.id = 'thRow';
-  tHeader.appendChild(tHeaderRow);
-  sD.appendChild(tHeader);
   sD.appendChild(tBody);
   for (var hr = 0; hr < hoursOpen.length; hr++) {
     var thr = document.createElement('tr');
@@ -76,18 +98,24 @@ function renderTH() {
   }
 };
 
-// Store.prototype.render = function(sectId) {
-//   console.log(this.hrTotal);
-//   this.dayTotal = this.hourTotal(this.hrTotal, this.dayTotal, this.avgCookie,
-//     this.randCust);
+function renderTD() {
+  var tHD1 = document.createElement('td');
+  var tHD2 = document.createElement('td');
+  var tHD3 = document.createElement('td');
+  var tHD4 = document.createElement('td');
+  var tHD5 = document.createElement('td');
+}
+
+// Store.prototype.renderRow = function() {
+//   this.dayTotal = this.hourTotal(this.hrTotal, this.dayTotal, this.avgCookie, this.randCust);
 //   var trEl = document.createElement('tr');
 //
 //   for (var i = 0; i < hoursOpen.length; i++) {
-//     var tdEl = document.createElement('tr');
+//     var tdEl = document.createElement('td');
 //     pEl.textContent = this.name;
 //     liEl.textContent = hoursOpen[i] + this.hrTotal[i];
 //     ulEl.appendChild(liEl);
-//
+//   }
 // };
 // Store.prototype.render = function(sectId) {
 //   console.log(this.hrTotal);
@@ -105,24 +133,10 @@ function renderTH() {
 //   liMent.textContent = 'Totals: ' + this.dayTotal;
 //   ulEl.appendChild(liMent);
 //   pEl.appendChild(ulEl);
-// };
-
-var pike = new Store('Pike Place Store', 17, 88, 5.2, 'pike');
-var sea = new Store('SeaTac Store', 6, 24, 1.2, 'seaTac');
-var sou = new Store('Southcenter Store', 11, 38, 1.9, 'souCen');
-var bell = new Store('Bellevue Square Store', 20, 48, 3.3, 'belVue');
-var alki = new Store('Alki Store', 3, 24, 2.6, 'alki');
-
-var storeName = [
-  pike,
-  sea,
-  sou,
-  bell,
-  alki
-];
-
-renderTH();
+// }
 
 // for (var c = 0; c < storeName.length; c++) {
 //   storeName[c].render(storeName[c].sectionId);
 // };
+
+renderTH();
