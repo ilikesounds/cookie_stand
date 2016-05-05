@@ -49,30 +49,22 @@ Store.prototype.hourTotal = function(hTotal, dTotal, avg, rand) {
   return dTotal;
 };
 
-//function() {
-//  var createdTD = [];
-//  for (tr = 0; tr < 5; tr++) {
-//    var ctd = document.createElement('td');
-//    createdTD.push(ctd);
-//  }
-//};
-
-// How can I DRY this out using a for loop to automate column creation based on the first 4 indicies of the store object
 function renderTH() {
   var tHeader = document.createElement('thead');
-  var tHR1 = document.createElement('tr');
-  var tHR2 = document.createElement('tr');
-  var etd1 = document.createElement('td');
-  var etd2 = document.createElement('td');
+  var tHR = [];
+  var eTD = [];
+  for (var thr = 0; thr < 2; thr++) {
+    var tHR1 = document.createElement('tr');
+    var etd1 = document.createElement('td');
+    tHR.push(tHR1);
+    eTD.push(etd1);
+    eTD[thr].className = 'emptyTableData';
+    tHR[thr].appendChild(eTD[thr]);
+    tHeader.appendChild(tHR[thr]);
+  };
   tHeader.id = 'tableHeader';
-  tHR1.id = 'storeNameRow';
-  tHR2.id = 'storeStatsRow';
-  etd1.className = 'emptyTableData';
-  etd2.className = 'emptyTableData';
-  tHR1.appendChild(etd1);
-  tHR2.appendChild(etd2);
-  tHeader.appendChild(tHR1);
-  tHeader.appendChild(tHR2);
+  tHR[0].id = 'storeNameRow';
+  tHR[1].id = 'storeStatsRow';
   sD.appendChild(tHeader);
 };
 
