@@ -1,5 +1,26 @@
 var sD = document.getElementById('storesDiv');
 
+(function defineTable() {
+  var table = document.createElement('table');
+  var thead = document.createElement('thead');
+  var tbody = document.createElement('tbody');
+  var tfoot = document.createElement('tfoot');
+  sD.appendChild(table);
+  table.appendChild(thead);
+  table.appendChild(tbody);
+  table.appendChild(tfoot);
+  table.id = 'dataTable';
+  thead.id = 'dataHeader';
+  tbody.id = 'dataBody';
+  tfoot.id = 'dataFooter';
+}());
+
+var tableEl = [
+  document.getElementById('dataHeader'),
+  document.getElementById('dataBody'),
+  document.getElementById('dataFooter')
+];
+
 var hoursOpen = ['10:00 am', '11:00 am', '12:00 pm', '01:00 pm', '02:00 pm',
   '03:00 pm', '04:00 pm', '05:00 pm'
 ];
@@ -41,10 +62,6 @@ Store.prototype.hourTotal = function(hTotal, dTotal, avg, rand) {
 };
 
 function renderTH() {
-  var tHeader = document.createElement('thead');
-  var dataTable = document.createElement('table');
-  sD.appendChild(dataTable);
-  dataTable.id = 'dataTable';
   var tHR = [];
   var eTD = [];
   for (var thr = 0; thr < 2; thr++) {
@@ -52,26 +69,33 @@ function renderTH() {
     eTD.push(document.createElement('td'));
     eTD[thr].className = 'emptyTableData';
     tHR[thr].appendChild(eTD[thr]);
-    tHeader.appendChild(tHR[thr]);
+    tableEl[0].appendChild(tHR[thr]);
   };
-  tHeader.id = 'tableHeader';
   tHR[0].id = 'storeNameRow';
   tHR[1].id = 'storeStatsRow';
-  dataTable.appendChild(tHeader);
 };
 
 function renderHRCol() {
-  var tBody = document.createElement('tbody');
   var hrcTR = [];
   var hrcTD = [];
   for (var hrc = 0; hrc < hoursOpen.length; hrc++) {
-    var hrcTR1 = document.createElement('tr');
-    var hrcTD1 = document.createElement('td');
+    hrcTR.push(document.createElement('tr'));
+    hrcTD.push(document.createElement('td'));
+    hrcTD[hrc].id = 'hours' + hrc;
+    hrcTD[hrc].textContent = hoursOpen[hrc];
+    hrcTR[hrc].appendChild(hrcTD[hrc]);
+    tableEl[1].appendChild(hrcTR[hrc]);
   }
 };
 
+// Store.renderStoreStat = function(obj) {
+//   var nameRow = document.getElementById('storeNameRow');
+//   var sNRow = [];
+//   for
+// };
+
 // for (obj <- (this is arbitrary, like a function argument or variable) in Store <- (this specifies the array to iterate over)); {
-//   this syntax will iterate over the total number of objects within the Store object
+//   this syntax will iterate  over the total number of objects within the Store object
 // };
 
 //Store[obj].method/property is how you access the object array as a traditional array, you can call this with [obj] because it was specified in the previous for loop. I have to do this using for loops.
@@ -145,5 +169,3 @@ function renderTD() {
 
 // var formEl = document.getElementById('submit');
 // submit.addEventListener('submit', function())
-
-renderTH();
