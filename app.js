@@ -67,7 +67,7 @@ function renderTH() {
   for (var thr = 0; thr < 2; thr++) {
     tHR.push(document.createElement('tr'));
     eTD.push(document.createElement('td'));
-    eTD[thr].className = 'emptyTableData';
+    eTD[thr].id = 'emptyTableData' + thr;
     tHR[thr].appendChild(eTD[thr]);
     tableEl[0].appendChild(tHR[thr]);
   };
@@ -88,84 +88,23 @@ function renderHRCol() {
   }
 };
 
-// Store.renderStoreStat = function(obj) {
-//   var nameRow = document.getElementById('storeNameRow');
-//   var sNRow = [];
-//   for
-// };
-
-// for (obj <- (this is arbitrary, like a function argument or variable) in Store <- (this specifies the array to iterate over)); {
-//   this syntax will iterate  over the total number of objects within the Store object
-// };
-
-//Store[obj].method/property is how you access the object array as a traditional array, you can call this with [obj] because it was specified in the previous for loop. I have to do this using for loops.
-
-// var sName = [];
-// tBody.id = 'tableBody';
-// for (var tbd = 0; tbd < Store.length; tbd++) {
-//   var sName1 = document.createElement('td')
-//   sName.push(sName1);
-//   sName[tbd].textContent = Store.name[tbd];
-//   sName[tbd].id = Store
-// };
-// tHD1.textContent = '';
-// tHD2.textContent = 'Store Name';
-// tHD3.textContent = 'Min. Cust./Hr.';
-// tHD4.textContent = 'Max. Cust./Hr.';
-// tHD5.textContent = 'Avg. Cookie/Hr.';
-// tHeaderRow.appendChild(tHD1);
-// tHeaderRow.appendChild(tHD2);
-// tHeaderRow.appendChild(tHD3);
-// tHeaderRow.appendChild(tHD4);
-// tHeaderRow.appendChild(tHD5);
-// tHeaderRow.id = 'thRow';
-// sD.appendChild(tBody);
-// for (var hr = 0; hr < hoursOpen.length; hr++) {
-//   var thr = document.createElement('tr');
-//   thr.textContent = hoursOpen[hr];
-//   tBody.appendChild(thr);
-// }
-
-function renderTD() {
-  var tHD1 = document.createElement('td');
-  var tHD2 = document.createElement('td');
-  var tHD3 = document.createElement('td');
-  var tHD4 = document.createElement('td');
-  var tHD5 = document.createElement('td');
+function rss() {
+  var sNRow = [];
+  var sSRow = [];
+  var snr = document.getElementById('storeNameRow');
+  var ssr = document.getElementById('storeStatsRow');
+  for (var ii = 0; ii < storeName.length; ii++) {
+    sNRow.push(document.createElement('td'));
+    console.log(sNRow);
+    var idName = storeName[ii].name;
+    idName = idName.replace(/\s+/g, '');
+    sNRow[ii].id = idName;
+    sNRow[ii].textContent = storeName[ii].name;
+    sNRow[ii].colSpan = 3;
+    snr.appendChild(sNRow[ii]);
+  };
 }
 
-// Store.prototype.renderRow = function() {
-//   this.dayTotal = this.hourTotal(this.hrTotal, this.dayTotal, this.avgCookie, this.randCust);
-//   var trEl = document.createElement('tr');
-//
-//   for (var i = 0; i < hoursOpen.length; i++) {
-//     var tdEl = document.createElement('td');
-//     pEl.textContent = this.name;
-//     liEl.textContent = hoursOpen[i] + this.hrTotal[i];
-//     ulEl.appendChild(liEl);
-//   }
-// };
-// Store.prototype.render = function(sectId) {
-//   console.log(this.hrTotal);
-//   this.dayTotal = this.hourTotal(this.hrTotal, this.dayTotal, this.avgCookie, this.randCust);
-//   var pEl = document.getElementById(sectId);
-//   var ulEl = document.createElement('ul');
-//
-//   for (var i = 0; i < hoursOpen.length; i++) {
-//     var liEl = document.createElement('li');
-//     pEl.textContent = this.name;
-//     liEl.textContent = hoursOpen[i] + this.hrTotal[i];
-//     ulEl.appendChild(liEl);
-//   }
-//   var liMent = document.createElement('li');
-//   liMent.textContent = 'Totals: ' + this.dayTotal;
-//   ulEl.appendChild(liMent);
-//   pEl.appendChild(ulEl);
-// }
-
-// for (var c = 0; c < storeName.length; c++) {
-//   storeName[c].render(storeName[c].sectionId);
-// };
-
-// var formEl = document.getElementById('submit');
-// submit.addEventListener('submit', function())
+renderTH();
+renderHRCol();
+rss();
