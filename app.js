@@ -74,7 +74,7 @@ function renderTH() {
   for (var thr = 0; thr < 2; thr++) {
     tHR.push(document.createElement('tr'));
     eTD.push(document.createElement('td'));
-    eTD[thr].id = 'emptyTableData' + thr;
+    eTD[thr].className = 'eTD';
     tHR[thr].appendChild(eTD[thr]);
     tableEl[0].appendChild(tHR[thr]);
   };
@@ -89,6 +89,7 @@ function renderHRCol() {
     hrcTR.push(document.createElement('tr'));
     hrcTD.push(document.createElement('td'));
     hrcTR[hrc].id = 'hours' + hrc;
+    hrcTD[hrc].className = 'hr';
     hrcTD[hrc].textContent = hoursOpen[hrc];
     hrcTR[hrc].appendChild(hrcTD[hrc]);
     tableEl[1].appendChild(hrcTR[hrc]);
@@ -96,8 +97,10 @@ function renderHRCol() {
   var hrcTotR = document.createElement('tr');
   var hrcTotD = document.createElement('td');
   hrcTotR.id = 'totalsRow';
+  hrcTotR.className = 'totrow';
   hrcTotD.id = 'totalsData0';
-  hrcTotD.textContent = 'Daily Cookie Total';
+  hrcTotD.className = 'totdata';
+  hrcTotD.textContent = 'Daily Cookies';
   hrcTotR.appendChild(hrcTotD);
   tableEl[2].appendChild(hrcTotR);
 };
@@ -114,21 +117,25 @@ function rss() {
     var idName = storeName[ii].name;
     idName = idName.replace(/\s+/g, '');
     sNRow[ii].id = idName;
+    sNRow[ii].className = 'sn';
     sNRow[ii].textContent = storeName[ii].name;
     sNRow[ii].colSpan = 3;
     snr.appendChild(sNRow[ii]);
   };
   for (var ix = 0; ix < storeName.length; ix++) {
     sSCol1.push(document.createElement('td'));
-    sSCol1[ix].id = 'minCust' + ii;
+    sSCol1[ix].id = 'minCust' + ix;
+    sSCol1[ix].className = 'stat';
     sSCol1[ix].textContent = storeName[ix].minCust;
     ssr.appendChild(sSCol1[ix]);
     sSCol2.push(document.createElement('td'));
     sSCol2[ix].id = 'maxCust' + ix;
+    sSCol2[ix].className = 'stat';
     sSCol2[ix].textContent = storeName[ix].maxCust;
     ssr.appendChild(sSCol2[ix]);
     sSCol3.push(document.createElement('td'));
     sSCol3[ix].id = 'avgCookie' + ix;
+    sSCol3[ix].className = 'stat';
     sSCol3[ix].textContent = storeName[ix].avgCookie;
     ssr.appendChild(sSCol3[ix]);
   };
@@ -143,15 +150,18 @@ Store.renderNew = function(sName) {
     var idName = sName.name;
     idName = idName.replace(/\s+/g, '');
     hrCookTD.id = idName + 'hrTotal' + iii;
+    hrCookTD.className = 'data';
     hrCookTD.textContent = sName.hrTotal[iii];
     hrId.appendChild(hrCookTD);
   };
   var totalTD = document.createElement('td');
+  totalTD.colSpan = 3;
   var totalAppend = document.getElementById('totalsRow');
   totalTD.textContent = sName.dayTotal;
   var idName2 = sName.name;
   idName2 = idName2.replace(/\s+/g, '');
   totalTD.id = idName2 + 'Total';
+  totalTD.className = 'totdata';
   totalAppend.appendChild(totalTD);
 };
 
@@ -180,19 +190,23 @@ formEl.addEventListener('submit', function(event) {
   var idName3 = storeName.lastIndexOf.name;
   idName3 = idName3.replace(/\s+/g, '');
   sNRow.id = idName3;
+  sNRow.className = 'sn';
   sNRow.textContent = storeName[storeName.length - 1].name;
   sNRow.colSpan = 3;
   snr.appendChild(sNRow);
   var sSCol1 = document.createElement('td');
   sSCol1.id = 'minCust' + storeName[storeName.length - 1];
+  sSCol1.className = 'stat';
   sSCol1.textContent = storeName[storeName.length - 1].minCust;
   ssr.appendChild(sSCol1);
   var sSCol2 = document.createElement('td');
   sSCol2.id = 'maxCust' + storeName[storeName.length - 1];
+  sSCol2.className = 'stat';
   sSCol2.textContent = storeName[storeName.length - 1].maxCust;
   ssr.appendChild(sSCol2);
   var sSCol3 = document.createElement('td');
   sSCol3.id = 'avgCookie' + storeName[storeName.length - 1];
+  sSCol3.className = 'stat';
   sSCol3.textContent = storeName[storeName.length - 1].avgCookie;
   ssr.appendChild(sSCol3);
 });
