@@ -1,4 +1,5 @@
 var sD = document.getElementById('storesDiv');
+var formEl = document.getElementById('storeUpdate');
 
 (function defineTable() {
   var table = document.createElement('table');
@@ -36,7 +37,7 @@ var storeName = [];
 
 var hrsId = [];
 
-function Store(name, minCust, maxCust, avgCookie, sectionId) {
+function Store(name, minCust, maxCust, avgCookie) {
   this.name = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
@@ -46,11 +47,11 @@ function Store(name, minCust, maxCust, avgCookie, sectionId) {
   storeName.push(this);
 };
 
-var pike = new Store('Pike Place Store', 17, 88, 5.2, 'pike');
-var sea = new Store('SeaTac Store', 6, 24, 1.2, 'seaTac');
-var sou = new Store('Southcenter Store', 11, 38, 1.9, 'souCen');
-var bell = new Store('Bellevue Square Store', 20, 48, 3.3, 'belVue');
-var alki = new Store('Alki Store', 3, 24, 2.6, 'alki');
+var pike = new Store('Pike Place Store', 17, 88, 5.2);
+var sea = new Store('SeaTac Store', 6, 24, 1.2);
+var sou = new Store('Southcenter Store', 11, 38, 1.9);
+var bell = new Store('Bellevue Square Store', 20, 48, 3.3);
+var alki = new Store('Alki Store', 3, 24, 2.6);
 
 Store.prototype.randCust = function(min, max) {
   console.log(min, max);
@@ -117,38 +118,38 @@ function rss() {
     sNRow[ii].colSpan = 3;
     snr.appendChild(sNRow[ii]);
   };
-  for (var ii = 0; ii < storeName.length; ii++) {
+  for (var ix = 0; ix < storeName.length; ix++) {
     sSCol1.push(document.createElement('td'));
-    sSCol1[ii].id = 'minCust' + ii;
-    sSCol1[ii].textContent = storeName[ii].minCust;
-    ssr.appendChild(sSCol1[ii]);
+    sSCol1[ix].id = 'minCust' + ii;
+    sSCol1[ix].textContent = storeName[ix].minCust;
+    ssr.appendChild(sSCol1[ix]);
     sSCol2.push(document.createElement('td'));
-    sSCol2[ii].id = 'maxCust' + ii;
-    sSCol2[ii].textContent = storeName[ii].maxCust;
-    ssr.appendChild(sSCol2[ii]);
+    sSCol2[ix].id = 'maxCust' + ix;
+    sSCol2[ix].textContent = storeName[ix].maxCust;
+    ssr.appendChild(sSCol2[ix]);
     sSCol3.push(document.createElement('td'));
-    sSCol3[ii].id = 'avgCookie' + ii;
-    sSCol3[ii].textContent = storeName[ii].avgCookie;
-    ssr.appendChild(sSCol3[ii]);
+    sSCol3[ix].id = 'avgCookie' + ix;
+    sSCol3[ix].textContent = storeName[ix].avgCookie;
+    ssr.appendChild(sSCol3[ix]);
   };
 }
 
-Store.renderNew = function(storeName) {
-  storeName.hourTotal(storeName.hrTotal, storeName.dayTotal, storeName.avgCookie);
+Store.renderNew = function(sName) {
+  sName.hourTotal(sName.hrTotal, sName.dayTotal, sName.avgCookie);
   for (iii = 0; iii < hoursOpen.length; iii++) {
     var hrId = document.getElementById('hours' + iii);
     var hrCookTD = document.createElement('td');
     hrCookTD.colSpan = 3;
-    var idName = storeName.name;
+    var idName = sName.name;
     idName = idName.replace(/\s+/g, '');
     hrCookTD.id = idName + 'hrTotal' + iii;
-    hrCookTD.textContent = storeName.hrTotal[iii];
+    hrCookTD.textContent = sName.hrTotal[iii];
     hrId.appendChild(hrCookTD);
   };
   var totalTD = document.createElement('td');
   var totalAppend = document.getElementById('totalsRow');
-  totalTD.textContent = storeName.dayTotal;
-  var idName2 = storeName.name;
+  totalTD.textContent = sName.dayTotal;
+  var idName2 = sName.name;
   idName2 = idName2.replace(/\s+/g, '');
   totalTD.id = idName2 + 'Total';
   totalAppend.appendChild(totalTD);
@@ -162,5 +163,38 @@ function runEmAll() {
     Store.renderNew(storeName[s]);
   };
 };
+
+formEl.addEventListener('submit', function(event) {
+  event.preventDefault();
+  var newStoreName = event.target.newStoreName.value;
+  var newMinCust = parseInt(event.target.newStoreMin.value);
+  var newMaxCust = parseInt(event.target.newStoreMax.value);
+  var newAvgCookie = parseFloat(event.target.newStoreAvg.value);
+  var newShop = new Store(newStoreName, newMinCust, newMaxCust,
+    newAvgCookie);
+  newShop.hourTotal();
+  Store.renderNew(newShop);
+  var snr = document.getElementById('storeNameRow');
+  var ssr = document.getElementById('storeStatsRow');
+  var sNRow = document.createElement('td');
+  var idName3 = storeName.lastIndexOf.name;
+  idName3 = idName3.replace(/\s+/g, '');
+  sNRow.id = idName3;
+  sNRow.textContent = storeName[storeName.length - 1].name;
+  sNRow.colSpan = 3;
+  snr.appendChild(sNRow);
+  var sSCol1 = document.createElement('td');
+  sSCol1.id = 'minCust' + storeName[storeName.length - 1];
+  sSCol1.textContent = storeName[storeName.length - 1].minCust;
+  ssr.appendChild(sSCol1);
+  var sSCol2 = document.createElement('td');
+  sSCol2.id = 'maxCust' + storeName[storeName.length - 1];
+  sSCol2.textContent = storeName[storeName.length - 1].maxCust;
+  ssr.appendChild(sSCol2);
+  var sSCol3 = document.createElement('td');
+  sSCol3.id = 'avgCookie' + storeName[storeName.length - 1];
+  sSCol3.textContent = storeName[storeName.length - 1].avgCookie;
+  ssr.appendChild(sSCol3);
+});
 
 runEmAll();
