@@ -1,219 +1,78 @@
-/*Rules for the logo section*/
+header {
 
-/*Rules for the typography section*/
-body {
-  max-width: 960px;
-  background-color: #00796B;
 }
 
-/*table css rules*/
+nav{
 
-table {
-  font-family: 'Tahoma', sans;
-  max-width: 720px;
-  /*background-color: #B2DFDB*/
-  color: #212121;
-  margin: auto;
-  padding: 0px;
 }
 
-td {
-  text-align: center;
-  font-family: 'Tahoma', sans;
-  marign: auto;
-  padding: 5px;
-  font-size: 1 em;
-  color: #212121;
-  border: 2px solid #ffffff;
-  background-color: #B2DFDB;
-  border-spacing: 2px;
+main{
+
 }
 
-.stat {
-  font-size: .75em;
-  width: 40px;
-  background-color: #B2DFDB
+#about{
+
 }
 
-.sn {
-  font-weight: bold;
-  background-color: #B2DFDB
+#buy {
+
 }
 
-.etd {
-  empty-cells: hide;
+#events {
+
 }
 
-.hr, #totalsData0 {
-  width: 250px;
-  margin: 0px;
-  padding: 0px;
-  /*text-align: ;*/
+/*Testimonial formatting section*/
+#testimonials {
+
 }
 
-/*form CSS*/
+.testtext1 {
 
-.form {
-  margin: 5px;
-  text-align: center;
-  border-radius: 10px;
 }
 
-legend {
-  background-color: #B2DFDB;
-  color: #212121;
-  font-size: 1.5em;
-  font-weight: bold;
-  width: 250px;
-  border-radius: 10px;
-  padding: 5px;
+.texttext2 {
+
 }
 
-input {
-  background-color: #B2DFDB;
-  color: #ffffff;
-  font-family: 'Tahoma', sans;
-  font-size: 1em;
-  border-radius: 10px;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+.testtext3 {
+
 }
 
-#sub {
-  background-color: #FF5722;
-  color: #212121;
-  margin: 2px;
-  padding: 5px;
+.testpic {
+
 }
 
-#highlights{
-  background-color: #00796B;
-  margin: 5px;
-  width: 100%;
+/*Contact section formatting*/
+#contact {
+
 }
 
-#highL {
-  font-family: 'Rouge Script', cursive;
-  font-size: 64px;
-  font-weight: normal;
-  color: #FFFFFF;
-  margin: 0px;
-  padding: 0px;
+.name {
+
 }
 
-#high1, #high2, #high3, #high4, #high5 {
-  marign: auto;
-  padding: 5px;
-  font-size: 16px;
-  color: #FFFFFF;
+.address {
+
 }
 
-#bodyText {
-  background-color: #009688;
-  margin: 5px;
-  width: 100%;
+.contact {
+
 }
 
-#bodyT {
-  font-family: 'Georgia', serif;
-  font-size: 64px;
-  font-weight: normal;
-  color: #FFFFFF;
-  margin: 0px;
-  padding: 0px;
+/* Image formatting */
+img {
+
 }
 
-#body1, #body2, #body3, #body4, #body5 {
-  font-family: 'Georgia', serif;
-  marign: auto;
-  padding: 5px;
-  font-size: 16px;
-  color: #FFFFFF;
+.small {
+
 }
 
-#dataText {
-  background-color: #B2DFDB;
-  margin: 5px;
-  width: 100%;
+.medium {
+
 }
 
-#dataT {
-  font-family: 'Tahoma', sans;
-  font-size: 64px;
-  font-weight: normal;
-  color: #212121;
-  margin: 0px;
-  padding: 0px;
-}
+.large {
 
-#data1, #data2, #data3, #data4, #data5 {
-  font-family: 'Tahoma', sans;
-  marign: auto;
-  padding: 5px;
-  font-size: 16px;
-  color: #212121;
-}
-
-/*Rules for color pallete section*/
-/*#colors {
-  display: block;
-  width: 100%;
-  height: 50px;
-}*/
-
-#colors > * {
-  display: block;
-  width: 100%;
-  height: 100px;
-  padding: 50px;
-  margin: 10px;
-}
-
-.darkPrimary {
-  background-color: #00796B;
-  color: #ffffff;
-  font-size: 32px;
-  vertical-align: bottom;
-  margin: 5px;
-}
-
-.primary {
-  background-color: #009688;
-  color: #ffffff;
-  font-size: 32px;
-  vertical-align: bottom;
-  margin: 5px;
-}
-
-.lightPrimary {
-  background-color: #B2DFDB;
-  color: #212121;
-  font-size: 32px;
-  vertical-align: bottom;
-  margin: 5px;
-}
-
-.lightText {
-  background-color: #FFFFFF;
-  color: #212121;
-  font-size: 32px;
-  vertical-align: bottom;
-  margin: 5px;
-}
-
-.accent {
-  background-color: #FF5722;
-  color: #ffffff;
-  font-size: 32px;
-  vertical-align: bottom;
-  margin: 5px;
-}
-
-.primaryText {
-  background-color: #212121;
-  color: #ffffff;
-  font-size: 32px;
-  vertical-align: bottom;
-  margin: 5px;
 }
