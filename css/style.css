@@ -1,6 +1,7 @@
 /*Header section formatting*/
 header {
   display: block;
+  box-sizing: border-box;
   width: 100%;
   background-color: #00796B;
   border: .1em solid #B6B6B6;
@@ -63,33 +64,44 @@ main{
   display: block;
   margin: 0 auto;
   padding: 0;
+  background-color: #009688;
+  border-left: .1em solid #B6B6B6;
+  border-right: .1em solid #B6B6B6;
+  box-sizing: border-box;
 }
 
 .center {
   max-width: 75%;
   display: inline-block;
+  box-sizing: border-box;
 }
 
 .sidebar {
-  max-width: 25%;
+  max-width: 14.7em;
+  height: 52em;
   display: inline-block;
-  float: right;
-}
+  vertical-align: top;
+  border-left: .0625em solid #B6B6B6;
+  box-sizing: border-box;
+  }
 
 h2 {
   display: inline-block;
+  width: 100%;
   font-family: 'Rouge Script', cursive;
   font-size: 3em;
   font-weight: lighter;
+  background-color: #009688;
+  color: #FFFFFF;
   margin: 0;
-  padding: 0;
+  text-align: center;
 }
 
 footer {
   max-width: 100%;
   height: 13.75em;
   margin: auto;
-  padding: .625em;
+  padding: 0;
   clear: both;
 }
 
@@ -97,8 +109,8 @@ footer {
 #about{
   display: inline-block;
   width: 100%;
-  margin: 0 .5em;
-  padding: 1em;
+  margin: 0 auto;
+  padding: 0;
 }
 
 #about > img {
@@ -106,15 +118,18 @@ footer {
   float: left;
   vertical-align: top;
   border-radius: 100%;
-  margin: .625em;
+  margin: .0625em;
 }
 
 #about > p {
   display: block;
+  max-width: 100%;
   vertical-align: top;
-  padding: .3125em;
-  margin: 0;
-  padding: 0;
+  text-align: left;
+  margin: 0 auto;
+  padding: .5em;
+  background-color: #B2DFDB;
+  color: #212121;
 }
 
 /*Buy our stuff section formatting*/
@@ -124,17 +139,23 @@ footer {
   margin: 0 auto;
   padding: 0;
   clear: both;
+  background-color: #B2DFDB;
 }
 
 #buy > img {
   max-width: 25%;
   display: inline-block;
-  float: left;
 }
 
 #buy > p {
-  max-width: 75%;
+  max-width: 73%;
   display: inline-block;
+  color: #212121;
+  text-align: left;
+  vertical-align: top;
+  margin: 0 auto;
+  padding: .25em;
+  clear: both;
 }
 
 /*Event section formatting*/
@@ -144,6 +165,7 @@ footer {
   margin: 0;
   padding: 0;
   clear: both;
+  background-color: #009688;
 }
 
 #eventSection > h2 {
@@ -153,70 +175,78 @@ footer {
 .event {
 display: inline-block;
 margin: 1.25em;
-padding: 1.5em;
+padding: .6em;
+text-align: center;
+background-color: #FFFFFF;
 }
 
 .event > a {
 display: block;
 text-decoration: none;
-max-width: 12em;
+max-width: 11em;
 text-align: center;
+color: #727272;
 }
 
 
 .event > img {
 display: block;
 max-height: 8.125em;
+text-align: center;
+margin: 0 auto;
 }
 
 /*Testimonial formatting section*/
-#testimonials {
-  display: inline;
-  position: absolute;
+.testimonials {
   vertical-align: top;
   width: 100%;
   margin-left: auto;
-  padding: .5em;
 }
 
 .testes {
   max-width: 100%;
-  height: 17.625em;
+  height: 15.9375em;
+  box-sizing: border-box;
   margin: auto;
-  padding: .0625em;
   text-align: center;
   font-family: 'Georgia', serif;
+  background-color: #FF5722;
+}
+
+.squirrel {
+  height: 14.95em;
+}
+
+figure{
+  background-color: #B2DFDB;
+  margin: 0;
 }
 
 blockquote {
   background-color: #FF5722;
-}
-
-.testtext1 {
-}
-
-.texttext2 {
-
-}
-
-.testtext3 {
-
+  color: #FFFFFF;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  padding: .125em;
 }
 
 .testpic {
   border-radius: 100%;
+  margin: .25em;
 }
 
 /*Contact section formatting*/
 #contacts {
   display: block;
-  width: 100%;
+  width: 60em;
   background-color: #00796B;
   text-align: center;
   vertical-align: middle;
   margin: 0 auto;
   padding: .3125em;
   border: .1em solid #B6B6B6;
+  box-sizing: border-box;
 }
 
 .storeContact {
@@ -239,15 +269,7 @@ blockquote {
 }
 
 /* Image formatting */
-img {
-  display: inline-block;
-}
-
 .small {
-  max-width: 6.25em;
-}
-
-.medium {
   max-width: 6.25em;
 }
 
