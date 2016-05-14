@@ -12,10 +12,9 @@ header {
 .imgContainer {
   display: inline-block;
   vertical-align: middle;
-  height: 75px;
-  width: 150px;
+  height: 100px;
+  width: 200px;
   margin: auto .3125em;
-  padding: 1.5em;
   border-radius: 100%;
   background: url(../img/cookie.jpg);
 }
@@ -23,7 +22,7 @@ header {
 header > .imgcontainer > img {
   text-align: center;
   vertical-align: middle;
-  margin: .1875em;
+  margin: 1.3em;
   max-width: 10em;
 }
 
@@ -83,6 +82,7 @@ main{
   vertical-align: top;
   border-left: .0625em solid #B6B6B6;
   box-sizing: border-box;
+  background-color: #FF5722;
   }
 
 h2 {
@@ -251,8 +251,8 @@ blockquote {
 
 .storeContact {
   display: inline-block;
-  width: 11em;
-  height: 11em;
+  width: 14.5em;
+  height: 14.5em;
   padding: 1.5em;
   list-style-type: none;
   font-size: .8em;
@@ -261,6 +261,7 @@ blockquote {
   border-radius: 100%;
   border: .1em solid #B6B6B6;
   line-height: 2;
+  vertical-align: bottom;
 }
 
 .contact {
