@@ -1,30 +1,161 @@
+/*Header section formatting*/
 header {
+  display: block;
+  width: 100%;
+  background-color: #00796B;
+  border: .1em solid #B6B6B6;
+  margin: 0 auto;
+  padding: 0;
+}
 
+.imgContainer {
+  display: inline-block;
+  vertical-align: middle;
+  height: 75px;
+  width: 150px;
+  margin: auto .3125em;
+  padding: 1.5em;
+  border-radius: 100%;
+  background: url(../img/cookie.jpg);
+}
+
+header > .imgcontainer > img {
+  text-align: center;
+  vertical-align: middle;
+  margin: .1875em;
+  max-width: 10em;
+}
+
+header > h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Rouge Script', cursive;
+  font-size: 6.5em;
+  font-weight: lighter;
+  text-align: right;
+  color: #FFFFFF;
+  margin: auto;
+  padding: inherit;
 }
 
 nav{
-
+  background-color: #FF5722;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  border-top: .0625em solid #B6B6B6;
 }
 
+nav > a {
+  display: inline-block;
+  width: 8.5em;
+  font-family: 'Georgia', serif;
+  font-size: 1em;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: auto;
+  padding: .3125em;
+}
+
+/*Main body formatting*/
 main{
-
+  display: block;
+  margin: 0 auto;
+  padding: 0;
 }
 
+.center {
+  max-width: 75%;
+  display: inline-block;
+}
+
+.sidebar {
+  max-width: 25%;
+  display: inline-block;
+  float: right;
+}
+
+h2 {
+  font-family: 'Rouge Script', cursive;
+  font-size: 3em;
+  font-weight: lighter;
+  margin: 0;
+  padding: 0;
+}
+
+/*About section formatting*/
 #about{
-
+  display: inline-block;
+  width: 100%;
+  margin: 0 .5em;
+  padding: 1em;
 }
 
+#about > img {
+  display: block;
+  float: left;
+  vertical-align: top;
+  border-radius: 100%;
+  margin: .625em;
+}
+
+#about > p {
+  display: block;
+  vertical-align: top;
+  padding: .3125em;
+  margin: 0;
+  padding: 0;
+}
+
+/*Buy our stuff section formatting*/
 #buy {
+  max-height: 11.25em;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#buy > img {
+  max-width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+#buy > p {
+  max-width: 50%;
+  display: inline-block;
+}
+
+/*Event section formatting*/
+#eventSection {
+  max-width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#event {
+display: inline-block;
+}
+
+#event > a {
 
 }
 
-#events {
+
+#event > img {
 
 }
 
 /*Testimonial formatting section*/
 #testimonials {
-
+  display: inline;
+  position: absolute;
+  vertical-align: top;
+  width: 100%;
+  margin-left: auto;
+  padding: .5em;
 }
 
 .testtext1 {
@@ -40,20 +171,46 @@ main{
 }
 
 .testpic {
-
+  border-radius: 100%;
 }
 
 /*Contact section formatting*/
-#contact {
+#contacts {
+  display: block;
+  width: 100%;
+  background-color: #00796B;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: .3125em;
+  border: .1em solid #B6B6B6;
+}
 
+.storeContact {
+  display: inline-block;
+  width: 11.5em;
+  height: 11.5em;
+  margin: auto;
+  padding: 1.5em;
+  list-style-type: none;
+  font-size: .8em;
+  color: #727272;
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  border: .1em solid #B6B6B6;
+  text-align: center;
+  vertical-align: bottom;
+  text-decoration: none;
 }
 
 .name {
-
+  text-align: center;
+  vertical-align: middle;
 }
 
 .address {
-
+  text-align: center;
+  vertical-align: middle;
 }
 
 .contact {
@@ -62,17 +219,17 @@ main{
 
 /* Image formatting */
 img {
-
+  display: inline-block;
 }
 
 .small {
-
+  max-width: 6.25em;
 }
 
 .medium {
-
+  max-width: 6.25em;
 }
 
 .large {
-
+  width: 18.75em;
 }
