@@ -77,11 +77,20 @@ main{
 }
 
 h2 {
+  display: inline-block;
   font-family: 'Rouge Script', cursive;
   font-size: 3em;
   font-weight: lighter;
   margin: 0;
   padding: 0;
+}
+
+footer {
+  max-width: 100%;
+  height: 13.75em;
+  margin: auto;
+  padding: .625em;
+  clear: both;
 }
 
 /*About section formatting*/
@@ -110,20 +119,21 @@ h2 {
 
 /*Buy our stuff section formatting*/
 #buy {
-  max-height: 11.25em;
+  min-height: 11.25em;
   display: block;
   margin: 0 auto;
   padding: 0;
+  clear: both;
 }
 
 #buy > img {
-  max-width: 50%;
+  max-width: 25%;
   display: inline-block;
   float: left;
 }
 
 #buy > p {
-  max-width: 50%;
+  max-width: 75%;
   display: inline-block;
 }
 
@@ -133,19 +143,30 @@ h2 {
   display: block;
   margin: 0;
   padding: 0;
+  clear: both;
 }
 
-#event {
+#eventSection > h2 {
+  display: block;
+}
+
+.event {
 display: inline-block;
+margin: 1.25em;
+padding: 1.5em;
 }
 
-#event > a {
-
+.event > a {
+display: block;
+text-decoration: none;
+max-width: 12em;
+text-align: center;
 }
 
 
-#event > img {
-
+.event > img {
+display: block;
+max-height: 8.125em;
 }
 
 /*Testimonial formatting section*/
@@ -158,8 +179,20 @@ display: inline-block;
   padding: .5em;
 }
 
-.testtext1 {
+.testes {
+  max-width: 100%;
+  height: 17.625em;
+  margin: auto;
+  padding: .0625em;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
 
+blockquote {
+  background-color: #FF5722;
+}
+
+.testtext1 {
 }
 
 .texttext2 {
@@ -188,9 +221,8 @@ display: inline-block;
 
 .storeContact {
   display: inline-block;
-  width: 11.5em;
-  height: 11.5em;
-  margin: auto;
+  width: 11em;
+  height: 11em;
   padding: 1.5em;
   list-style-type: none;
   font-size: .8em;
@@ -198,23 +230,12 @@ display: inline-block;
   background-color: #FFFFFF;
   border-radius: 100%;
   border: .1em solid #B6B6B6;
-  text-align: center;
-  vertical-align: bottom;
-  text-decoration: none;
-}
-
-.name {
-  text-align: center;
-  vertical-align: middle;
-}
-
-.address {
-  text-align: center;
-  vertical-align: middle;
+  line-height: 2;
 }
 
 .contact {
-
+  text-decoration: none;
+  color: #727272;
 }
 
 /* Image formatting */
