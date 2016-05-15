@@ -1,0 +1,279 @@
+/*Header section formatting*/
+header {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #00796B;
+  border: .1em solid #B6B6B6;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.imgContainer {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100px;
+  width: 200px;
+  margin: auto .3125em;
+  border-radius: 100%;
+  background: url(../img/cookie.jpg);
+}
+
+header > .imgcontainer > img {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1.3em;
+  max-width: 10em;
+}
+
+header > h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Rouge Script', cursive;
+  font-size: 6.5em;
+  font-weight: lighter;
+  text-align: right;
+  color: #FFFFFF;
+  margin: auto;
+  padding: inherit;
+}
+
+nav{
+  background-color: #FF5722;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  border-top: .0625em solid #B6B6B6;
+}
+
+nav > a {
+  display: inline-block;
+  width: 8.5em;
+  font-family: 'Georgia', serif;
+  font-size: 1em;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: auto;
+  padding: .3125em;
+}
+
+/*Main body formatting*/
+main{
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #009688;
+  border-left: .1em solid #B6B6B6;
+  border-right: .1em solid #B6B6B6;
+  box-sizing: border-box;
+}
+
+.center {
+  max-width: 75%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  max-width: 14.7em;
+  height: 52em;
+  display: inline-block;
+  vertical-align: top;
+  border-left: .0625em solid #B6B6B6;
+  box-sizing: border-box;
+  background-color: #FF5722;
+  }
+
+h2 {
+  display: inline-block;
+  width: 100%;
+  font-family: 'Rouge Script', cursive;
+  font-size: 3em;
+  font-weight: lighter;
+  background-color: #009688;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: center;
+}
+
+footer {
+  max-width: 100%;
+  height: 13.75em;
+  margin: auto;
+  padding: 0;
+  clear: both;
+}
+
+/*About section formatting*/
+#about{
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#about > img {
+  display: block;
+  float: left;
+  vertical-align: top;
+  border-radius: 100%;
+  margin: .0625em;
+}
+
+#about > p {
+  display: block;
+  max-width: 100%;
+  vertical-align: top;
+  text-align: left;
+  margin: 0 auto;
+  padding: .5em;
+  background-color: #B2DFDB;
+  color: #212121;
+}
+
+/*Buy our stuff section formatting*/
+#buy {
+  min-height: 11.25em;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  clear: both;
+  background-color: #B2DFDB;
+}
+
+#buy > img {
+  max-width: 25%;
+  display: inline-block;
+}
+
+#buy > p {
+  max-width: 73%;
+  display: inline-block;
+  color: #212121;
+  text-align: left;
+  vertical-align: top;
+  margin: 0 auto;
+  padding: .25em;
+  clear: both;
+}
+
+/*Event section formatting*/
+#eventSection {
+  max-width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  background-color: #009688;
+}
+
+#eventSection > h2 {
+  display: block;
+}
+
+.event {
+display: inline-block;
+margin: 1.25em;
+padding: .6em;
+text-align: center;
+background-color: #FFFFFF;
+}
+
+.event > a {
+display: block;
+text-decoration: none;
+max-width: 11em;
+text-align: center;
+color: #727272;
+}
+
+
+.event > img {
+display: block;
+max-height: 8.125em;
+text-align: center;
+margin: 0 auto;
+}
+
+/*Testimonial formatting section*/
+.testimonials {
+  vertical-align: top;
+  width: 100%;
+  margin-left: auto;
+}
+
+.testes {
+  max-width: 100%;
+  height: 15.9375em;
+  box-sizing: border-box;
+  margin: auto;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  background-color: #FF5722;
+}
+
+.squirrel {
+  height: 14.95em;
+}
+
+figure{
+  background-color: #B2DFDB;
+  margin: 0;
+}
+
+blockquote {
+  background-color: #FF5722;
+  color: #FFFFFF;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  padding: .125em;
+}
+
+.testpic {
+  border-radius: 100%;
+  margin: .25em;
+}
+
+/*Contact section formatting*/
+#contacts {
+  display: block;
+  width: 60em;
+  background-color: #00796B;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: .3125em;
+  border: .1em solid #B6B6B6;
+  box-sizing: border-box;
+}
+
+.storeContact {
+  display: inline-block;
+  width: 14.5em;
+  height: 14.5em;
+  padding: 1.5em;
+  list-style-type: none;
+  font-size: .8em;
+  color: #727272;
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  border: .1em solid #B6B6B6;
+  line-height: 2;
+  vertical-align: bottom;
+}
+
+.contact {
+  text-decoration: none;
+  color: #727272;
+}
+
+/* Image formatting */
+.small {
+  max-width: 6.25em;
+}
+
+.large {
+  width: 18.75em;
+}

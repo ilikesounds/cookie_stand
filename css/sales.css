@@ -1,0 +1,201 @@
+main {
+  background-color: #009688;
+}
+
+/*Header section formatting*/
+header {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #00796B;
+  border: .1em solid #B6B6B6;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.imgContainer {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100px;
+  width: 200px;
+  margin: auto .3125em;
+  border-radius: 100%;
+  background: url(../img/cookie.jpg);
+}
+
+header > .imgcontainer > img {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1.3em;
+  max-width: 10em;
+}
+
+header > h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Rouge Script', cursive;
+  font-size: 6.5em;
+  font-weight: lighter;
+  text-align: right;
+  color: #FFFFFF;
+  margin: auto;
+  padding: inherit;
+}
+
+nav{
+  background-color: #FF5722;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  border-top: .0625em solid #B6B6B6;
+}
+
+nav > a {
+  display: inline-block;
+  width: 8.5em;
+  font-family: 'Georgia', serif;
+  font-size: 1em;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: auto;
+  padding: .3125em;
+}
+
+/*table css rules*/
+#storesDiv {
+  background-color: #009688;
+}
+
+table {
+  font-family: 'Tahoma', sans;
+  max-width: 720px;
+  /*background-color: #B2DFDB*/
+  color: #212121;
+  margin: auto;
+  padding: 0px;
+}
+
+td {
+  text-align: center;
+  font-family: 'Tahoma', sans;
+  marign: auto;
+  padding: 5px;
+  font-size: 1 em;
+  color: #212121;
+  border: 2px solid #ffffff;
+  background-color: #B2DFDB;
+  border-spacing: 2px;
+}
+
+.stat {
+  font-size: .75em;
+  width: 40px;
+  background-color: #B2DFDB
+}
+
+.sn {
+  font-weight: bold;
+  background-color: #B2DFDB
+}
+
+.etd {
+  empty-cells: hide;
+}
+
+.hr, #totalsData0 {
+  width: 250px;
+  margin: 0px;
+  padding: 0px;
+  /*text-align: ;*/
+}
+
+/*form CSS*/
+form {
+  margin: 0 auto;
+}
+
+
+.form {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #009688;
+}
+
+legend {
+  background-color: #B2DFDB;
+  color: #212121;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 250px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+fieldset {
+  margin: 0 auto;
+  padding: 0;
+  border-color: rgba(0,0,0,0);
+}
+
+input {
+  background-color: #B2DFDB;
+  color: #ffffff;
+  font-family: 'Tahoma', sans;
+  font-size: 1em;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#sub {
+  background-color: #FF5722;
+  color: #212121;
+  margin: 2px;
+  padding: 5px;
+}
+
+/*Footer section formatting*/
+footer {
+  max-width: 100%;
+  height: 13.75em;
+  margin: auto;
+  padding: 0;
+  clear: both;
+}
+
+/*Contact section formatting*/
+#contacts {
+  display: block;
+  width: 60em;
+  background-color: #00796B;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: .3125em;
+  border: .1em solid #B6B6B6;
+  box-sizing: border-box;
+}
+
+.storeContact {
+  display: inline-block;
+  width: 14.5em;
+  height: 14.5em;
+  padding: 1.5em;
+  list-style-type: none;
+  font-size: .8em;
+  color: #727272;
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  border: .1em solid #B6B6B6;
+  line-height: 2;
+  vertical-align: bottom;
+}
+
+.contact {
+  text-decoration: none;
+  color: #727272;
+}
